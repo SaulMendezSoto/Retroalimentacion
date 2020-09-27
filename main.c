@@ -1,5 +1,7 @@
 #include "stdio.h"
+
 void capturar_enteros(){
+
     int enteros[5],suma=0,i;
     float promedio;
     for(i=0; i<5; i++){
@@ -11,11 +13,20 @@ void capturar_enteros(){
     for(i=0; i<5; i++){
         suma=suma + enteros[i];
     }
-    printf("suma= %i", suma);
-    printf("Promedio= %i",suma/5.0);
+    printf("suma= %i\n", suma);
+    printf("Promedio= %i\n",suma/5.0);
+}
+void mostrar(int n, char cadena []){
+    int i;
+    for(i=0; i<n ; i++){
+        printf("%s",cadena);
+
+    }
 }
 int main(){
     char op;
+    char cadena[20];
+    int n;
     do
     {
         printf("1) capturar enteros \n");
@@ -31,6 +42,13 @@ int main(){
          capturar_enteros();
             break;
         case'2':
+        printf("ingresa la cadena de 20 caracteres: ");
+        fflush(stdin);
+        fgets(cadena, sizeof(cadena), stdin);
+        printf("n: ");
+        scanf("%i",&n);
+        mostrar(n,cadena);
+        
             break;
         case'3':
             break;
